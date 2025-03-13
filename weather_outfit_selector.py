@@ -1,19 +1,26 @@
 def weather_outfit_selector():
     print("Welcome to the Weather-Driven Outfit Selector!")
 
-    temperature = int(input("Enter the current temperature in Celsius: "))  
-    weather = input("Is it sunny, rainy, cloudy, or snowy today? ").lower()
+    while True:
+        try:
+            temperature = int(input("Enter the current temperature in Celsius: "))  
+            break
+        except ValueError:
+            print("Invalid temperature. Please enter a valid number.")  
 
-    if weather in ['sunny', 'rainy', 'cloudy', 'snowy']:
-        print("Invalid weather type. Please enter 'sunny', 'rainy', 'cloudy', or 'snowy'.")
-        return
+    while True:
+        weather = input("Is it sunny, rainy, cloudy, or snowy today? ").lower()
+        if weather in ['sunny', 'rainy', 'cloudy', 'snowy']:
+            break
+        else:       
+            print("Invalid weather type. Please enter 'sunny', 'rainy', 'cloudy', or 'snowy'.")
 
     if temperature > 25 and weather == 'sunny':  
-        outfit = "Raincoat and boots"
+        outfit = "T-shirt and shorts"
     elif temperature <= 25 and weather == 'sunny':
         outfit = "Light jacket and jeans"
     elif temperature <= 15 and weather == 'rainy':
-        outfit = "T-shirt and shorts"
+        outfit = "Raincoat and boots"
     elif temperature <= 5 and weather == 'snowy': 
         outfit = "Heavy winter coat and snow boots"
     else:
@@ -21,7 +28,13 @@ def weather_outfit_selector():
 
     print(f"Suggested outfit: {outfit}")
 
-    preference = input("Do you prefer casual or formal? ").lower()
+    while True:
+        preference = input("Do you prefer casual or formal? ").lower()
+        if preference in ['casual', 'formal']:
+            break
+        else:
+            print("Invalid preference. Please enter 'casual' or 'formal'.") 
+
     if preference == 'formal':
         outfit = outfit.replace("T-shirt", "Button-up shirt").replace("shorts", "Formal pants")
 
