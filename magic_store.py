@@ -1,6 +1,11 @@
-def add_to_cart(item, cart):
+import warnings
+
+
+def add_to_cart(self, item, cart):
     # Adds an item to the cart if it's not already there.
     if item in cart:
+        # Issue a warning if the item is already in the cart
+        warnings.warn(f"{item} is already in the cart!", UserWarning)
         return f"{item} is already in the cart!"
     cart.append(item)
     return f"{item} has been added to the cart."
