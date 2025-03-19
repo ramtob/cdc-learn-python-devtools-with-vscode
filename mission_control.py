@@ -1,4 +1,3 @@
-import unittest
 import warnings
 
 # Function to calculate gravity based on the planet
@@ -27,10 +26,3 @@ def add_planet_to_mission(planet, mission_plan):
     else:
         mission_plan.remove(planet) 
     return mission_plan
-
-# Test case class for Astronauts' Space Mission
-class TestMissionControl(unittest.TestCase):
-    pass
-
-if __name__ == "__main__":
-    unittest.main()
