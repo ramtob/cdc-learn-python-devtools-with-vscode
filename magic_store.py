@@ -1,7 +1,7 @@
 import warnings
 
 
-def add_to_cart(self, item, cart):
+def add_to_cart(item, cart):
     # Adds an item to the cart if it's not already there.
     if item in cart:
         # Issue a warning if the item is already in the cart
@@ -17,10 +17,10 @@ def checkout(cart):
     return "Your cart is empty! Add some magic items first!"
 
 # Calling the functions
-cart = []
+# cart = []
 
-# Adding items to the cart
-print(add_to_cart("Magic Wand", cart))  
-print(add_to_cart("Flying Broom", cart)) 
-print(add_to_cart("Invisibility Cloak", cart)) 
-print(add_to_cart("Magic Wand", cart))  
+# # Adding items to the cart
+# print(add_to_cart("Magic Wand", cart))  
+# print(add_to_cart("Flying Broom", cart)) 
+# print(add_to_cart("Invisibility Cloak", cart)) 
+# print(add_to_cart("Magic Wand", cart))  

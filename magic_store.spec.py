@@ -1,3 +1,4 @@
+import sys
 import unittest
 import magic_store as ms
 
