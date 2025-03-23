@@ -21,6 +21,19 @@ class TestPetAdoptionCenter(unittest.TestCase):
         ]
         result = pac.match_pet(adopter_preferences, pets)
         self.assertEqual(result, "No match found")
+    
+    def test_adoption_fee_young_pet(self):
+        result = pac.calculate_adoption_fee(1)  # Young pet
+        self.assertEqual(result, 100)
+
+    def test_adoption_fee_adult_pet(self):
+        result = pac.calculate_adoption_fee(5)  # Adult pet
+        self.assertEqual(result, 50)
+
+    def test_adoption_fee_illegal_age(self):
+        with self.assertRaises(ValueError):
+            pac.calculate_adoption_fee(-1)  # Negative age
+    
 
 if __name__ == "__main__":
     unittest.main()
