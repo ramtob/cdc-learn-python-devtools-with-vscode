@@ -1,4 +1,3 @@
-import unittest
 import warnings
 
 # Function to match a pet with an adopter based on preferences
@@ -23,9 +22,3 @@ def register_new_pet(new_pet, adoption_list):
     else:
         adoption_list.append(new_pet)
     return adoption_list
-
-class TestPetAdoptionCenter(unittest.TestCase):
-    pass
-
-if __name__ == "__main__":
-    unittest.main()
