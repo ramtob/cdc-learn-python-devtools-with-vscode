@@ -47,6 +47,20 @@ class TestPetAdoptionCenter(unittest.TestCase):
             result = pac.register_new_pet(new_pet, adoption_list)
             self.assertEqual(result, [new_pet])
     
+    @unittest.skip("This test is skipped because the pet registration feature is under development.")
+    def test_register_exotic_pets(self):
+        new_pet = {"name": "Fluffy", "type": "Unicorn", "size": "Large", "age": "Young"}
+        adoption_list = []
+        result = pac.register_new_pet(new_pet, adoption_list)
+        self.assertEqual(result, [new_pet])
+
+    def setUp(self):
+        self.adoption_list = []
+        return super().setUp()
+    
+    def tearDown(self):
+        self.adoption_list = None
+        return super().tearDown()
 
 if __name__ == "__main__":
     unittest.main()
