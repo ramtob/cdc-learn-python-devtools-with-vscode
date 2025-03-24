@@ -34,6 +34,19 @@ class TestPetAdoptionCenter(unittest.TestCase):
         with self.assertRaises(ValueError):
             pac.calculate_adoption_fee(-1)  # Negative age
     
+    def test_register_new_pet(self):
+        new_pet = {"name": "Buddy", "type": "Dog", "size": "Medium", "age": "Young"}
+        adoption_list = []
+        result = pac.register_new_pet(new_pet, adoption_list)
+        self.assertEqual(result, [new_pet])
+    
+    def test_register_existing_pet(self):
+        new_pet = {"name": "Buddy", "type": "Dog", "size": "Medium", "age": "Young"}
+        adoption_list = [new_pet]
+        with self.assertWarns(UserWarning):
+            result = pac.register_new_pet(new_pet, adoption_list)
+            self.assertEqual(result, [new_pet])
+    
 
 if __name__ == "__main__":
     unittest.main()
